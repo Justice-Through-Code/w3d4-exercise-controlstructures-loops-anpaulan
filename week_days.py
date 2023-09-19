@@ -21,6 +21,7 @@ def favorite_activities():
     for fave in days:
         activity = input(f'What is your favorite activity on {fave}?')
         fave_activities.append(activity)
+
     print(fave_activities)
         
     # We should keep track of the user's favorite things to do so that we can print them out all together.
@@ -61,17 +62,17 @@ def favorite_activities():
 
 
 def temp_by_day():
-    daily_temps = []
-    for temp in days:
-        x_temp = input(f'What is the temp on {temp}?')
-        x_temp = float(x_temp)
-        daily_temps.append(temp)
-        if x_temp in range (-1000,50):
+    # daily_temps = []
+    for day in days:
+        x_temp = int(input(f'What is the temp on {day}?'))
+        # x_temp = int(x_temp)
+        # daily_temps.append(temp)
+        if x_temp <50:
             print('Brr, put on a jacket!')
-        elif x_temp in range(50,66):
+        elif x_temp >=50 and x_temp <=65:
             print('Cozy, grab a sweater')
-        else:
-            print('Put on some suncreen!')
+        elif x_temp >65:
+            print('Put on some sunscreen!')
 
 # temp_by_day()
     # 3 TODO: Write a program that loops through the days in the week. Each day, ask the user what the temperature
@@ -84,14 +85,14 @@ def temp_by_day_continuous():
     # 4 TODO: Write a program that asks the user what temperature it is outside. While the temperature is below 65,
     # tell the user to wear a sweater. Once the temperature is over 65, stop looping, and tell the user that
     # Spring has sprung!
-    today = input('What is the weather today?')
-    today = int(today)
+    today = int(input('What is the weather today?'))
+    # today = int(today)
     while today <= 65:
         print('Wear a sweater')
-        if today == 65:
-            break
-    else: 
-        print('Spring has sprung!')
+        today = int(input('What is the weather today?'))
+        # if today > 65:
+        #     break
+    print('Spring has sprung!')
 
 # temp_by_day_continuous()
     # NOTE: If you accidentally create an infinite while loop, it's ok! Go into the command line and
